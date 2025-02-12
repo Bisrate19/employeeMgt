@@ -10,7 +10,7 @@ const [values, setValues] = useState({
 
 const handleSubmit =(event) =>{
     event.preventDefault()
-    axios.post('http://localhost:3000/auth/adminlogin')
+    axios.post('http://localhost:3000/auth/adminlogin', values )
     .then(result => console.log(result))
     .catch(err => console.log(err))
 }
