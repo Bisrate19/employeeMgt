@@ -34,5 +34,13 @@ return res.json({loginStatus: true })
 
 });
 
+router.post("/add_category", (req, res) => {
+    const sql = "insert into category (name) values (?)"
+    con.query(sql, [req.body.category], (err, result) => {
+        if (err) return res.json({Status: false, Error: "Query error"})
+        return res.json({Status: true})
+    })
+})
+
 
 export {router as adminRouter}
